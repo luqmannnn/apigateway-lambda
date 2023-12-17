@@ -1,7 +1,7 @@
 name: Terraform Delete
 
 on:
-  workflow_call:
+    workflow_dispatch:
 
 jobs:
     create-resource:
