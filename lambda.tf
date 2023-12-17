@@ -30,3 +30,12 @@ resource "aws_lambda_function" "lambda_two" {
   source_code_hash = data.archive_file.lambda_two.output_base64sha256               # Adjust the path
 }
 
+resource "aws_lambda_function_url" "lambda_one_url" {
+    function_name      = aws_lambda_function.lambda_one.function_name
+    authorization_type = "NONE"
+}
+
+resource "aws_lambda_function_url" "lambda_two_url" {
+    function_name      = aws_lambda_function.lambda_two.function_name
+    authorization_type = "NONE"
+}
